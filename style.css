@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Silkscreen&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #223;
+}
+
+.board {
+    position: relative;
+    width: 500px;
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+
+    background-color: rgb(46, 76, 132);
+    box-shadow: 0 0 0.9em 0 #00bef8;
+    border-radius: 10px;
+    color: white;
+
+    overflow: hidden;
+}
+
+.day {
+    position: absolute;
+
+    top: 1rem;
+    left: 1rem;
+}
+
+.hours {
+    font-size: 50px;
+}
+
+
+
+.top {
+    position: absolute;
+    
+    width: 100%;
+    height: 5px;
+
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(to right, rgb(46, 76, 132), #0088f8);
+
+    animation: animate1 .8s ease-in infinite;
+    
+}
+
+@keyframes animate1 {
+    0% {
+      transform: translateX(-100%);      
+    }
+    100% {
+        transform: translateX(100%);      
+    }
+}
+
+.left {
+    position: absolute;
+    
+    width: 5px;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(to bottom, rgb(46, 76, 132), #0088f8);
+
+    animation: animate2 .8s ease-in infinite;
+}
+
+@keyframes animate2 {
+    0% {
+      transform: translateY(100%);      
+    }
+    100% {
+        transform: translateY(-100%);      
+    }
+}
+
+.right {
+    position: absolute;
+    
+    width: 5px;
+    height: 100%;
+
+    top: 0;
+    right: 0;
+
+    background: linear-gradient(to bottom, rgb(46, 76, 132), #0088f8);
+
+    animation: animate3 .8s ease-in infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate3{
+    0% {
+      transform: translateY(-100%);      
+    }
+    100% {
+        transform: translateY(100%);      
+    }
+}
+
+
+.bottom {
+    position: absolute;
+    
+    width: 100%;
+    height: 5px;
+
+    bottom: 0;
+
+    background: linear-gradient(to left, rgb(46, 76, 132), #0088f8);
+
+    animation: animate4 .8s ease-in infinite;
+}
+
+@keyframes animate4 {
+    0% {
+      transform: translateX(100%);      
+    }
+    100% {
+        transform: translateX(-100%);      
+    }
+}
+
+
+.some {
+    position: absolute;
+   
+    bottom: 8em;
+    left: 8em;
+}
+
+@media screen and (max-width: 500px) {
+    .board {
+        width: 350px;
+    }
+    .some {
+        left: 7rem;
+    }
+    .hours {
+        font-size: 40px;
+    }
+}
